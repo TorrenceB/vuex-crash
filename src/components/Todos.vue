@@ -36,11 +36,11 @@ export default {
   name: "Todos",
   methods: {
     ...mapActions(["fetchTodos", "deleteTodo", "updateTodo"]),
-    onDblClick(todo) {
+    onDblClick({ id, title, completed }) {
       const updatedTodo = {
-        id: todo.id,
-        title: todo.title,
-        completed: !todo.completed,
+        id: id,
+        title: title,
+        completed: !completed,
       };
 
       this.updateTodo(updatedTodo);
